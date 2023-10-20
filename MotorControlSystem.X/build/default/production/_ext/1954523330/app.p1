@@ -1,0 +1,865 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"23 ../PIC18F4620/MotorControlSystem/ECU_layer/ECU_INIT.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/ECU_INIT.h: 23: Std_ReturnType app_inisialize(void);
+[v _app_inisialize `(uc ~T0 @X0 0 ef ]
+"33 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 33: void lcd_welcomeMessage(void);
+[v _lcd_welcomeMessage `(v ~T0 @X0 0 ef ]
+"34
+[; ;../PIC18F4620/MotorControlSystem/app.h: 34: void lcd_MainScreen(void);
+[v _lcd_MainScreen `(v ~T0 @X0 0 ef ]
+"52 ../PIC18F4620/MotorControlSystem/ECU_layer/lcd/../../MCAL_Layer/GPIO/HAL_GPIO.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pinIndex direction logic ]
+"22 ../PIC18F4620/MotorControlSystem/ECU_layer/keypad/keypad.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/keypad/keypad.h: 22: typedef struct{
+[s S276 `S273 -> 4 `i `S273 -> 4 `i ]
+[n S276 . keypad_rows_pins keypad_col_pins ]
+"28
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/keypad/keypad.h: 28: Std_ReturnType ecu_keypad_scan_value(const keypad_t* _keypad , uint8_t* value);
+[v _ecu_keypad_scan_value `(uc ~T0 @X0 0 ef2`*CS276`*uc ]
+"31 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 31: extern keypad_t keypad;
+[v _keypad `S276 ~T0 @X0 0 e ]
+[v F1101 `(v ~T0 @X0 1 tf1`ul ]
+"12 D:/MPLAP/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v __delay `JF1101 ~T0 @X0 0 e ]
+[p i __delay ]
+"35 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 35: void lcd_ServoAngleScreen(void);
+[v _lcd_ServoAngleScreen `(v ~T0 @X0 0 ef ]
+"71 ../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h: 71: typedef struct{
+[s S278 `S273 -> 4 `i `S273 1 `S273 1 ]
+[n S278 . lcd_data lcd_RS lcd_en ]
+"83
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h: 83: Std_ReturnType lcd_4bit_send_char_pos(const lcd_4bit_t* _lcd ,uint8_t data , uint8_t row , uint8_t col);
+[v _lcd_4bit_send_char_pos `(uc ~T0 @X0 0 ef4`*CS278`uc`uc`uc ]
+"30 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 30: extern lcd_4bit_t _lcd;
+[v __lcd `S278 ~T0 @X0 0 e ]
+"87 ../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h: 87: Std_ReturnType lcd_4bit_setCursor(const lcd_4bit_t* _lcd , uint8_t row , uint8_t col );
+[v _lcd_4bit_setCursor `(uc ~T0 @X0 0 ef3`*CS278`uc`uc ]
+"37 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 37: void ServoControlHandler(uint8_t channel , uint16_t angle);
+[v _ServoControlHandler `(v ~T0 @X0 0 ef2`uc`us ]
+"85 ../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h: 85: Std_ReturnType lcd_4bit_send_str_pos(const lcd_4bit_t* _lcd ,uint8_t* str, uint8_t row , uint8_t col);
+[v _lcd_4bit_send_str_pos `(uc ~T0 @X0 0 ef4`*CS278`*uc`uc`uc ]
+"29 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"38 ../PIC18F4620/MotorControlSystem/app.h
+[; ;../PIC18F4620/MotorControlSystem/app.h: 38: int32_t AddString_Buffer(uint8_t* _Buffer , size_t bufferMaxSize , uint8_t* string);
+[v _AddString_Buffer `(l ~T0 @X0 0 ef3`*uc`ui`*uc ]
+"81 ../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/lcd/lcd.h: 81: Std_ReturnType lcd_4bit_send_command(const lcd_4bit_t* _lcd , uint8_t comm);
+[v _lcd_4bit_send_command `(uc ~T0 @X0 0 ef2`*CS278`uc ]
+"54 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.h: 54: Std_ReturnType PCA9685_SetServoAngle_180(uint8_t Channel , uint8_t Angle);
+[v _PCA9685_SetServoAngle_180 `(uc ~T0 @X0 0 ef2`uc`uc ]
+"55 ../PIC18F4620/MotorControlSystem/ECU_layer/../MCAL_Layer/I2C/../../../../../MPLAP/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8/pic/include/proc/pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"192
+[; <" PORTB equ 0F81h ;# ">
+"363
+[; <" PORTC equ 0F82h ;# ">
+"538
+[; <" PORTD equ 0F83h ;# ">
+"680
+[; <" PORTE equ 0F84h ;# ">
+"883
+[; <" LATA equ 0F89h ;# ">
+"995
+[; <" LATB equ 0F8Ah ;# ">
+"1107
+[; <" LATC equ 0F8Bh ;# ">
+"1219
+[; <" LATD equ 0F8Ch ;# ">
+"1331
+[; <" LATE equ 0F8Dh ;# ">
+"1383
+[; <" TRISA equ 0F92h ;# ">
+"1388
+[; <" DDRA equ 0F92h ;# ">
+"1605
+[; <" TRISB equ 0F93h ;# ">
+"1610
+[; <" DDRB equ 0F93h ;# ">
+"1827
+[; <" TRISC equ 0F94h ;# ">
+"1832
+[; <" DDRC equ 0F94h ;# ">
+"2049
+[; <" TRISD equ 0F95h ;# ">
+"2054
+[; <" DDRD equ 0F95h ;# ">
+"2271
+[; <" TRISE equ 0F96h ;# ">
+"2276
+[; <" DDRE equ 0F96h ;# ">
+"2435
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2500
+[; <" PIE1 equ 0F9Dh ;# ">
+"2577
+[; <" PIR1 equ 0F9Eh ;# ">
+"2654
+[; <" IPR1 equ 0F9Fh ;# ">
+"2731
+[; <" PIE2 equ 0FA0h ;# ">
+"2797
+[; <" PIR2 equ 0FA1h ;# ">
+"2863
+[; <" IPR2 equ 0FA2h ;# ">
+"2929
+[; <" EECON1 equ 0FA6h ;# ">
+"2995
+[; <" EECON2 equ 0FA7h ;# ">
+"3002
+[; <" EEDATA equ 0FA8h ;# ">
+"3009
+[; <" EEADR equ 0FA9h ;# ">
+"3016
+[; <" EEADRH equ 0FAAh ;# ">
+"3023
+[; <" RCSTA equ 0FABh ;# ">
+"3028
+[; <" RCSTA1 equ 0FABh ;# ">
+"3233
+[; <" TXSTA equ 0FACh ;# ">
+"3238
+[; <" TXSTA1 equ 0FACh ;# ">
+"3489
+[; <" TXREG equ 0FADh ;# ">
+"3494
+[; <" TXREG1 equ 0FADh ;# ">
+"3501
+[; <" RCREG equ 0FAEh ;# ">
+"3506
+[; <" RCREG1 equ 0FAEh ;# ">
+"3513
+[; <" SPBRG equ 0FAFh ;# ">
+"3518
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3525
+[; <" SPBRGH equ 0FB0h ;# ">
+"3532
+[; <" T3CON equ 0FB1h ;# ">
+"3644
+[; <" TMR3 equ 0FB2h ;# ">
+"3651
+[; <" TMR3L equ 0FB2h ;# ">
+"3658
+[; <" TMR3H equ 0FB3h ;# ">
+"3665
+[; <" CMCON equ 0FB4h ;# ">
+"3755
+[; <" CVRCON equ 0FB5h ;# ">
+"3834
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3916
+[; <" PWM1CON equ 0FB7h ;# ">
+"3986
+[; <" BAUDCON equ 0FB8h ;# ">
+"3991
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4158
+[; <" CCP2CON equ 0FBAh ;# ">
+"4237
+[; <" CCPR2 equ 0FBBh ;# ">
+"4244
+[; <" CCPR2L equ 0FBBh ;# ">
+"4251
+[; <" CCPR2H equ 0FBCh ;# ">
+"4258
+[; <" CCP1CON equ 0FBDh ;# ">
+"4355
+[; <" CCPR1 equ 0FBEh ;# ">
+"4362
+[; <" CCPR1L equ 0FBEh ;# ">
+"4369
+[; <" CCPR1H equ 0FBFh ;# ">
+"4376
+[; <" ADCON2 equ 0FC0h ;# ">
+"4447
+[; <" ADCON1 equ 0FC1h ;# ">
+"4532
+[; <" ADCON0 equ 0FC2h ;# ">
+"4651
+[; <" ADRES equ 0FC3h ;# ">
+"4658
+[; <" ADRESL equ 0FC3h ;# ">
+"4665
+[; <" ADRESH equ 0FC4h ;# ">
+"4672
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4734
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4804
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5025
+[; <" SSPADD equ 0FC8h ;# ">
+"5032
+[; <" SSPBUF equ 0FC9h ;# ">
+"5039
+[; <" T2CON equ 0FCAh ;# ">
+"5110
+[; <" PR2 equ 0FCBh ;# ">
+"5115
+[; <" MEMCON equ 0FCBh ;# ">
+"5220
+[; <" TMR2 equ 0FCCh ;# ">
+"5227
+[; <" T1CON equ 0FCDh ;# ">
+"5330
+[; <" TMR1 equ 0FCEh ;# ">
+"5337
+[; <" TMR1L equ 0FCEh ;# ">
+"5344
+[; <" TMR1H equ 0FCFh ;# ">
+"5351
+[; <" RCON equ 0FD0h ;# ">
+"5484
+[; <" WDTCON equ 0FD1h ;# ">
+"5512
+[; <" HLVDCON equ 0FD2h ;# ">
+"5517
+[; <" LVDCON equ 0FD2h ;# ">
+"5782
+[; <" OSCCON equ 0FD3h ;# ">
+"5859
+[; <" T0CON equ 0FD5h ;# ">
+"5936
+[; <" TMR0 equ 0FD6h ;# ">
+"5943
+[; <" TMR0L equ 0FD6h ;# ">
+"5950
+[; <" TMR0H equ 0FD7h ;# ">
+"5957
+[; <" STATUS equ 0FD8h ;# ">
+"6028
+[; <" FSR2 equ 0FD9h ;# ">
+"6035
+[; <" FSR2L equ 0FD9h ;# ">
+"6042
+[; <" FSR2H equ 0FDAh ;# ">
+"6049
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6056
+[; <" PREINC2 equ 0FDCh ;# ">
+"6063
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6070
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6077
+[; <" INDF2 equ 0FDFh ;# ">
+"6084
+[; <" BSR equ 0FE0h ;# ">
+"6091
+[; <" FSR1 equ 0FE1h ;# ">
+"6098
+[; <" FSR1L equ 0FE1h ;# ">
+"6105
+[; <" FSR1H equ 0FE2h ;# ">
+"6112
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6119
+[; <" PREINC1 equ 0FE4h ;# ">
+"6126
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6133
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6140
+[; <" INDF1 equ 0FE7h ;# ">
+"6147
+[; <" WREG equ 0FE8h ;# ">
+"6159
+[; <" FSR0 equ 0FE9h ;# ">
+"6166
+[; <" FSR0L equ 0FE9h ;# ">
+"6173
+[; <" FSR0H equ 0FEAh ;# ">
+"6180
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6187
+[; <" PREINC0 equ 0FECh ;# ">
+"6194
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6201
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6208
+[; <" INDF0 equ 0FEFh ;# ">
+"6215
+[; <" INTCON3 equ 0FF0h ;# ">
+"6307
+[; <" INTCON2 equ 0FF1h ;# ">
+"6377
+[; <" INTCON equ 0FF2h ;# ">
+"6494
+[; <" PROD equ 0FF3h ;# ">
+"6501
+[; <" PRODL equ 0FF3h ;# ">
+"6508
+[; <" PRODH equ 0FF4h ;# ">
+"6515
+[; <" TABLAT equ 0FF5h ;# ">
+"6524
+[; <" TBLPTR equ 0FF6h ;# ">
+"6531
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6538
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6545
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6554
+[; <" PCLAT equ 0FF9h ;# ">
+"6561
+[; <" PC equ 0FF9h ;# ">
+"6568
+[; <" PCL equ 0FF9h ;# ">
+"6575
+[; <" PCLATH equ 0FFAh ;# ">
+"6582
+[; <" PCLATU equ 0FFBh ;# ">
+"6589
+[; <" STKPTR equ 0FFCh ;# ">
+"6695
+[; <" TOS equ 0FFDh ;# ">
+"6702
+[; <" TOSL equ 0FFDh ;# ">
+"6709
+[; <" TOSH equ 0FFEh ;# ">
+"6716
+[; <" TOSU equ 0FFFh ;# ">
+"11 ../PIC18F4620/MotorControlSystem/app.c
+[; ;../PIC18F4620/MotorControlSystem/app.c: 11: uint16_t angle;
+[v _angle `us ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"12
+[; ;../PIC18F4620/MotorControlSystem/app.c: 12: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"13
+[; ;../PIC18F4620/MotorControlSystem/app.c: 13: {
+{
+[e :U _main ]
+[f ]
+"14
+[; ;../PIC18F4620/MotorControlSystem/app.c: 14:     Std_ReturnType ret;
+[v _ret `uc ~T0 @X0 1 a ]
+"15
+[; ;../PIC18F4620/MotorControlSystem/app.c: 15:     uint8_t kpdVal = 0xFF;
+[v _kpdVal `uc ~T0 @X0 1 a ]
+[e = _kpdVal -> -> 255 `i `uc ]
+"16
+[; ;../PIC18F4620/MotorControlSystem/app.c: 16:     uint8_t temp = 0;
+[v _temp `uc ~T0 @X0 1 a ]
+[e = _temp -> -> 0 `i `uc ]
+"17
+[; ;../PIC18F4620/MotorControlSystem/app.c: 17:     uint8_t ServoChannel = 0xff;
+[v _ServoChannel `uc ~T0 @X0 1 a ]
+[e = _ServoChannel -> -> 255 `i `uc ]
+"18
+[; ;../PIC18F4620/MotorControlSystem/app.c: 18:     uint8_t l_counter = 0;
+[v _l_counter `uc ~T0 @X0 1 a ]
+[e = _l_counter -> -> 0 `i `uc ]
+"19
+[; ;../PIC18F4620/MotorControlSystem/app.c: 19:     uint8_t l_counter2 = 0;
+[v _l_counter2 `uc ~T0 @X0 1 a ]
+[e = _l_counter2 -> -> 0 `i `uc ]
+"20
+[; ;../PIC18F4620/MotorControlSystem/app.c: 20:     ret = app_inisialize();
+[e = _ret ( _app_inisialize ..  ]
+"22
+[; ;../PIC18F4620/MotorControlSystem/app.c: 22:     lcd_welcomeMessage();
+[e ( _lcd_welcomeMessage ..  ]
+"24
+[; ;../PIC18F4620/MotorControlSystem/app.c: 24:     while(1)
+[e :U 281 ]
+"25
+[; ;../PIC18F4620/MotorControlSystem/app.c: 25:     {
+{
+"26
+[; ;../PIC18F4620/MotorControlSystem/app.c: 26:        angle = 0 ; l_counter = 1 ; l_counter2 = 0; ServoChannel = 0xff;
+[e = _angle -> -> 0 `i `us ]
+[e = _l_counter -> -> 1 `i `uc ]
+[e = _l_counter2 -> -> 0 `i `uc ]
+[e = _ServoChannel -> -> 255 `i `uc ]
+"27
+[; ;../PIC18F4620/MotorControlSystem/app.c: 27:        lcd_MainScreen();
+[e ( _lcd_MainScreen ..  ]
+"28
+[; ;../PIC18F4620/MotorControlSystem/app.c: 28:        kpdVal = 0xFF;
+[e = _kpdVal -> -> 255 `i `uc ]
+"29
+[; ;../PIC18F4620/MotorControlSystem/app.c: 29:        while(kpdVal == 0xFF || kpdVal > 4 || kpdVal < 1)
+[e $U 283  ]
+[e :U 284 ]
+"30
+[; ;../PIC18F4620/MotorControlSystem/app.c: 30:        {
+{
+"31
+[; ;../PIC18F4620/MotorControlSystem/app.c: 31:            ret = ecu_keypad_scan_value(&keypad , &temp);
+[e = _ret ( _ecu_keypad_scan_value (2 , -> &U _keypad `*CS276 &U _temp ]
+"32
+[; ;../PIC18F4620/MotorControlSystem/app.c: 32:            _delay((unsigned long)((100)*((8*((1000000UL)))/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> * -> -> -> 8 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"33
+[; ;../PIC18F4620/MotorControlSystem/app.c: 33:            ret = ecu_keypad_scan_value(&keypad , &kpdVal);
+[e = _ret ( _ecu_keypad_scan_value (2 , -> &U _keypad `*CS276 &U _kpdVal ]
+"34
+[; ;../PIC18F4620/MotorControlSystem/app.c: 34:            kpdVal = (kpdVal == temp) ? kpdVal : 0xFF;
+[e = _kpdVal -> ? == -> _kpdVal `i -> _temp `i : -> _kpdVal `i -> 255 `i `uc ]
+"36
+[; ;../PIC18F4620/MotorControlSystem/app.c: 36:        }
+}
+[e :U 283 ]
+"29
+[; ;../PIC18F4620/MotorControlSystem/app.c: 29:        while(kpdVal == 0xFF || kpdVal > 4 || kpdVal < 1)
+[e $ || || == -> _kpdVal `i -> 255 `i > -> _kpdVal `i -> 4 `i < -> _kpdVal `i -> 1 `i 284  ]
+[e :U 285 ]
+"37
+[; ;../PIC18F4620/MotorControlSystem/app.c: 37:        ServoChannel = kpdVal;
+[e = _ServoChannel _kpdVal ]
+"38
+[; ;../PIC18F4620/MotorControlSystem/app.c: 38:        lcd_ServoAngleScreen();
+[e ( _lcd_ServoAngleScreen ..  ]
+"39
+[; ;../PIC18F4620/MotorControlSystem/app.c: 39:        kpdVal = 0xFF ;
+[e = _kpdVal -> -> 255 `i `uc ]
+"40
+[; ;../PIC18F4620/MotorControlSystem/app.c: 40:        while(kpdVal != '=' )
+[e $U 286  ]
+[e :U 287 ]
+"41
+[; ;../PIC18F4620/MotorControlSystem/app.c: 41:        {
+{
+"42
+[; ;../PIC18F4620/MotorControlSystem/app.c: 42:            kpdVal = 0xFF;
+[e = _kpdVal -> -> 255 `i `uc ]
+"44
+[; ;../PIC18F4620/MotorControlSystem/app.c: 44:            ret = ecu_keypad_scan_value(&keypad , &temp);
+[e = _ret ( _ecu_keypad_scan_value (2 , -> &U _keypad `*CS276 &U _temp ]
+"45
+[; ;../PIC18F4620/MotorControlSystem/app.c: 45:            _delay((unsigned long)((100)*((8*((1000000UL)))/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> * -> -> -> 8 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"46
+[; ;../PIC18F4620/MotorControlSystem/app.c: 46:            ret = ecu_keypad_scan_value(&keypad , &kpdVal);
+[e = _ret ( _ecu_keypad_scan_value (2 , -> &U _keypad `*CS276 &U _kpdVal ]
+"47
+[; ;../PIC18F4620/MotorControlSystem/app.c: 47:            kpdVal = (kpdVal == temp) ? kpdVal : 0xFF;
+[e = _kpdVal -> ? == -> _kpdVal `i -> _temp `i : -> _kpdVal `i -> 255 `i `uc ]
+"49
+[; ;../PIC18F4620/MotorControlSystem/app.c: 49:            if(kpdVal >= 0 && kpdVal <= 9 && l_counter2 <3)
+[e $ ! && && >= -> _kpdVal `i -> 0 `i <= -> _kpdVal `i -> 9 `i < -> _l_counter2 `i -> 3 `i 289  ]
+"50
+[; ;../PIC18F4620/MotorControlSystem/app.c: 50:            {
+{
+"51
+[; ;../PIC18F4620/MotorControlSystem/app.c: 51:                ( angle = ((angle)*10) + (kpdVal) );
+[e = _angle -> + * -> _angle `ui -> -> 10 `i `ui -> _kpdVal `ui `us ]
+"52
+[; ;../PIC18F4620/MotorControlSystem/app.c: 52:                ret = lcd_4bit_send_char_pos(&_lcd , ( (uint8_t)(kpdVal+'0') ) , 4 , l_counter++);
+[e = _ret ( _lcd_4bit_send_char_pos (4 , , , -> &U __lcd `*CS278 -> + -> _kpdVal `ui -> 48 `ui `uc -> -> 4 `i `uc ++ _l_counter -> -> 1 `i `uc ]
+"53
+[; ;../PIC18F4620/MotorControlSystem/app.c: 53:                l_counter2++;
+[e ++ _l_counter2 -> -> 1 `i `uc ]
+"54
+[; ;../PIC18F4620/MotorControlSystem/app.c: 54:            }
+}
+[e $U 290  ]
+"55
+[; ;../PIC18F4620/MotorControlSystem/app.c: 55:            else if (kpdVal == 'c')
+[e :U 289 ]
+[e $ ! == -> _kpdVal `ui -> 99 `ui 291  ]
+"56
+[; ;../PIC18F4620/MotorControlSystem/app.c: 56:            {
+{
+"57
+[; ;../PIC18F4620/MotorControlSystem/app.c: 57:                angle /= 10.0;
+[e =/ _angle .10.0 ]
+"58
+[; ;../PIC18F4620/MotorControlSystem/app.c: 58:                l_counter = (l_counter <= 1) ? 1 : l_counter-1 ;
+[e = _l_counter -> ? <= -> _l_counter `i -> 1 `i : -> 1 `i - -> _l_counter `i -> 1 `i `uc ]
+"59
+[; ;../PIC18F4620/MotorControlSystem/app.c: 59:                l_counter2 = (l_counter2 <= 0) ? 0 : l_counter2-1 ;
+[e = _l_counter2 -> ? <= -> _l_counter2 `i -> 0 `i : -> 0 `i - -> _l_counter2 `i -> 1 `i `uc ]
+"60
+[; ;../PIC18F4620/MotorControlSystem/app.c: 60:                ret = lcd_4bit_send_char_pos(&_lcd ,' ' , 4 , l_counter);
+[e = _ret ( _lcd_4bit_send_char_pos (4 , , , -> &U __lcd `*CS278 -> -> 32 `ui `uc -> -> 4 `i `uc _l_counter ]
+"61
+[; ;../PIC18F4620/MotorControlSystem/app.c: 61:                ret = lcd_4bit_setCursor(&_lcd,4,l_counter);
+[e = _ret ( _lcd_4bit_setCursor (3 , , -> &U __lcd `*CS278 -> -> 4 `i `uc _l_counter ]
+"62
+[; ;../PIC18F4620/MotorControlSystem/app.c: 62:            }
+}
+[e :U 291 ]
+[e :U 290 ]
+"63
+[; ;../PIC18F4620/MotorControlSystem/app.c: 63:        }
+}
+[e :U 286 ]
+"40
+[; ;../PIC18F4620/MotorControlSystem/app.c: 40:        while(kpdVal != '=' )
+[e $ != -> _kpdVal `ui -> 61 `ui 287  ]
+[e :U 288 ]
+"64
+[; ;../PIC18F4620/MotorControlSystem/app.c: 64:            ServoControlHandler(ServoChannel,angle);
+[e ( _ServoControlHandler (2 , _ServoChannel _angle ]
+"66
+[; ;../PIC18F4620/MotorControlSystem/app.c: 66:     }
+}
+[e :U 280 ]
+[e $U 281  ]
+[e :U 282 ]
+"67
+[; ;../PIC18F4620/MotorControlSystem/app.c: 67: }
+[e :UE 279 ]
+}
+"70
+[; ;../PIC18F4620/MotorControlSystem/app.c: 70: void lcd_welcomeMessage(void)
+[v _lcd_welcomeMessage `(v ~T0 @X0 1 ef ]
+"71
+[; ;../PIC18F4620/MotorControlSystem/app.c: 71: {
+{
+[e :U _lcd_welcomeMessage ]
+[f ]
+[v F3609 `uc ~T0 @X0 -> 21 `i s ]
+[i F3609
+:U ..
+"72
+[; ;../PIC18F4620/MotorControlSystem/app.c: 72:     uint8_t lcd_buffer[21] = "Welcome";
+-> 87 `c
+-> 101 `c
+-> 108 `c
+-> 99 `c
+-> 111 `c
+-> 109 `c
+-> 101 `c
+-> 0 `c
+..
+]
+[v _lcd_buffer `uc ~T0 @X0 -> 21 `i a ]
+[e = _lcd_buffer F3609 ]
+"73
+[; ;../PIC18F4620/MotorControlSystem/app.c: 73:      Std_ReturnType ret;
+[v _ret `uc ~T0 @X0 1 a ]
+"74
+[; ;../PIC18F4620/MotorControlSystem/app.c: 74:     ret = lcd_4bit_send_str_pos(&_lcd ,lcd_buffer, 1 , 7);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 1 `i `uc -> -> 7 `i `uc ]
+"76
+[; ;../PIC18F4620/MotorControlSystem/app.c: 76:     memset(lcd_buffer,0,21);
+[e ( _memset (3 , , -> &U _lcd_buffer `*v -> 0 `i -> -> 21 `i `ui ]
+"77
+[; ;../PIC18F4620/MotorControlSystem/app.c: 77:     AddString_Buffer(lcd_buffer , 21 , (uint8_t*)"Motor Control System");
+[e ( _AddString_Buffer (3 , , &U _lcd_buffer -> -> 21 `i `ui -> :s 1C `*uc ]
+"78
+[; ;../PIC18F4620/MotorControlSystem/app.c: 78:     ret = lcd_4bit_send_str_pos(&_lcd ,lcd_buffer, 2 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 2 `i `uc -> -> 1 `i `uc ]
+"79
+[; ;../PIC18F4620/MotorControlSystem/app.c: 79:     _delay((unsigned long)((2000)*((8*((1000000UL)))/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> * -> -> -> 8 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"80
+[; ;../PIC18F4620/MotorControlSystem/app.c: 80: }
+[e :UE 292 ]
+}
+"82
+[; ;../PIC18F4620/MotorControlSystem/app.c: 82: void lcd_MainScreen(void)
+[v _lcd_MainScreen `(v ~T0 @X0 1 ef ]
+"83
+[; ;../PIC18F4620/MotorControlSystem/app.c: 83: {
+{
+[e :U _lcd_MainScreen ]
+[f ]
+[v F3613 `uc ~T0 @X0 -> 21 `i s ]
+[i F3613
+:U ..
+"84
+[; ;../PIC18F4620/MotorControlSystem/app.c: 84:     uint8_t lcd_buffer[21] = "Select Motor: ";
+-> 83 `c
+-> 101 `c
+-> 108 `c
+-> 101 `c
+-> 99 `c
+-> 116 `c
+-> 32 `c
+-> 77 `c
+-> 111 `c
+-> 116 `c
+-> 111 `c
+-> 114 `c
+-> 58 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _lcd_buffer `uc ~T0 @X0 -> 21 `i a ]
+[e = _lcd_buffer F3613 ]
+"85
+[; ;../PIC18F4620/MotorControlSystem/app.c: 85:     Std_ReturnType ret = lcd_4bit_send_command(&_lcd , 0x01);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U __lcd `*CS278 -> -> 1 `i `uc ]
+"86
+[; ;../PIC18F4620/MotorControlSystem/app.c: 86:     ret = lcd_4bit_send_str_pos(&_lcd , lcd_buffer, 1 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 1 `i `uc -> -> 1 `i `uc ]
+"87
+[; ;../PIC18F4620/MotorControlSystem/app.c: 87:     memset(lcd_buffer,0,21);
+[e ( _memset (3 , , -> &U _lcd_buffer `*v -> 0 `i -> -> 21 `i `ui ]
+"88
+[; ;../PIC18F4620/MotorControlSystem/app.c: 88:     AddString_Buffer(lcd_buffer , 21 , (uint8_t*)"1-Motor1  2-Motor2");
+[e ( _AddString_Buffer (3 , , &U _lcd_buffer -> -> 21 `i `ui -> :s 2C `*uc ]
+"89
+[; ;../PIC18F4620/MotorControlSystem/app.c: 89:     ret = lcd_4bit_send_str_pos(&_lcd ,lcd_buffer, 2 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 2 `i `uc -> -> 1 `i `uc ]
+"90
+[; ;../PIC18F4620/MotorControlSystem/app.c: 90:     memset(lcd_buffer,0,21);
+[e ( _memset (3 , , -> &U _lcd_buffer `*v -> 0 `i -> -> 21 `i `ui ]
+"91
+[; ;../PIC18F4620/MotorControlSystem/app.c: 91:     AddString_Buffer(lcd_buffer , 21 , (uint8_t*)"3-Motor3  4-Motor4");
+[e ( _AddString_Buffer (3 , , &U _lcd_buffer -> -> 21 `i `ui -> :s 3C `*uc ]
+"92
+[; ;../PIC18F4620/MotorControlSystem/app.c: 92:     ret = lcd_4bit_send_str_pos(&_lcd ,lcd_buffer, 3 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 3 `i `uc -> -> 1 `i `uc ]
+"94
+[; ;../PIC18F4620/MotorControlSystem/app.c: 94: }
+[e :UE 293 ]
+}
+"96
+[; ;../PIC18F4620/MotorControlSystem/app.c: 96: void lcd_ServoAngleScreen(void)
+[v _lcd_ServoAngleScreen `(v ~T0 @X0 1 ef ]
+"97
+[; ;../PIC18F4620/MotorControlSystem/app.c: 97: {
+{
+[e :U _lcd_ServoAngleScreen ]
+[f ]
+[v F3617 `uc ~T0 @X0 -> 21 `i s ]
+[i F3617
+:U ..
+"99
+[; ;../PIC18F4620/MotorControlSystem/app.c: 99:      uint8_t lcd_buffer[21] = "Min Angle 0";
+-> 77 `c
+-> 105 `c
+-> 110 `c
+-> 32 `c
+-> 65 `c
+-> 110 `c
+-> 103 `c
+-> 108 `c
+-> 101 `c
+-> 32 `c
+-> 48 `c
+-> 0 `c
+..
+]
+[v _lcd_buffer `uc ~T0 @X0 -> 21 `i a ]
+[e = _lcd_buffer F3617 ]
+"100
+[; ;../PIC18F4620/MotorControlSystem/app.c: 100:      Std_ReturnType ret = lcd_4bit_send_command(&_lcd , 0x01);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U __lcd `*CS278 -> -> 1 `i `uc ]
+"101
+[; ;../PIC18F4620/MotorControlSystem/app.c: 101:      ret = lcd_4bit_send_str_pos(&_lcd , lcd_buffer, 1 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 1 `i `uc -> -> 1 `i `uc ]
+"103
+[; ;../PIC18F4620/MotorControlSystem/app.c: 103:      memset(lcd_buffer,0,21);
+[e ( _memset (3 , , -> &U _lcd_buffer `*v -> 0 `i -> -> 21 `i `ui ]
+"104
+[; ;../PIC18F4620/MotorControlSystem/app.c: 104:      AddString_Buffer(lcd_buffer , 21 , (uint8_t*)"Max Angle 180");
+[e ( _AddString_Buffer (3 , , &U _lcd_buffer -> -> 21 `i `ui -> :s 4C `*uc ]
+"105
+[; ;../PIC18F4620/MotorControlSystem/app.c: 105:      ret = lcd_4bit_send_str_pos(&_lcd , lcd_buffer, 2 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 2 `i `uc -> -> 1 `i `uc ]
+"107
+[; ;../PIC18F4620/MotorControlSystem/app.c: 107:      memset(lcd_buffer,0,21);
+[e ( _memset (3 , , -> &U _lcd_buffer `*v -> 0 `i -> -> 21 `i `ui ]
+"108
+[; ;../PIC18F4620/MotorControlSystem/app.c: 108:      AddString_Buffer(lcd_buffer , 21 , (uint8_t*)"Set Motor angle: ");
+[e ( _AddString_Buffer (3 , , &U _lcd_buffer -> -> 21 `i `ui -> :s 5C `*uc ]
+"109
+[; ;../PIC18F4620/MotorControlSystem/app.c: 109:      ret = lcd_4bit_send_str_pos(&_lcd , lcd_buffer, 3 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 3 `i `uc -> -> 1 `i `uc ]
+"110
+[; ;../PIC18F4620/MotorControlSystem/app.c: 110: }
+[e :UE 294 ]
+}
+"111
+[; ;../PIC18F4620/MotorControlSystem/app.c: 111: void lcd_AngleErrorScreen(void)
+[v _lcd_AngleErrorScreen `(v ~T0 @X0 1 ef ]
+"112
+[; ;../PIC18F4620/MotorControlSystem/app.c: 112: {
+{
+[e :U _lcd_AngleErrorScreen ]
+[f ]
+[v F3621 `uc ~T0 @X0 -> 21 `i s ]
+[i F3621
+:U ..
+"113
+[; ;../PIC18F4620/MotorControlSystem/app.c: 113:     uint8_t lcd_buffer[21] = "Error Invaild Angle";
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 32 `c
+-> 73 `c
+-> 110 `c
+-> 118 `c
+-> 97 `c
+-> 105 `c
+-> 108 `c
+-> 100 `c
+-> 32 `c
+-> 65 `c
+-> 110 `c
+-> 103 `c
+-> 108 `c
+-> 101 `c
+-> 0 `c
+..
+]
+[v _lcd_buffer `uc ~T0 @X0 -> 21 `i a ]
+[e = _lcd_buffer F3621 ]
+"114
+[; ;../PIC18F4620/MotorControlSystem/app.c: 114:     Std_ReturnType ret = lcd_4bit_send_command(&_lcd , 0x01);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U __lcd `*CS278 -> -> 1 `i `uc ]
+"115
+[; ;../PIC18F4620/MotorControlSystem/app.c: 115:     ret = lcd_4bit_send_str_pos(&_lcd , lcd_buffer, 1 , 1);
+[e = _ret ( _lcd_4bit_send_str_pos (4 , , , -> &U __lcd `*CS278 &U _lcd_buffer -> -> 1 `i `uc -> -> 1 `i `uc ]
+"116
+[; ;../PIC18F4620/MotorControlSystem/app.c: 116:     _delay((unsigned long)((1000)*((8*((1000000UL)))/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> * -> -> -> 8 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"117
+[; ;../PIC18F4620/MotorControlSystem/app.c: 117: }
+[e :UE 295 ]
+}
+"118
+[; ;../PIC18F4620/MotorControlSystem/app.c: 118: void ServoControlHandler(uint8_t channel , uint16_t angle)
+[v _ServoControlHandler `(v ~T0 @X0 1 ef2`uc`us ]
+"119
+[; ;../PIC18F4620/MotorControlSystem/app.c: 119: {
+{
+[e :U _ServoControlHandler ]
+"118
+[; ;../PIC18F4620/MotorControlSystem/app.c: 118: void ServoControlHandler(uint8_t channel , uint16_t angle)
+[v _channel `uc ~T0 @X0 1 r1 ]
+[v _angle `us ~T0 @X0 1 r2 ]
+"119
+[; ;../PIC18F4620/MotorControlSystem/app.c: 119: {
+[f ]
+"120
+[; ;../PIC18F4620/MotorControlSystem/app.c: 120:     if( angle <= 180)
+[e $ ! <= -> _angle `ui -> -> 180 `i `ui 297  ]
+"121
+[; ;../PIC18F4620/MotorControlSystem/app.c: 121:     {
+{
+"122
+[; ;../PIC18F4620/MotorControlSystem/app.c: 122:        Std_ReturnType ret = PCA9685_SetServoAngle_180(channel-1 , (uint8_t)angle);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret ( _PCA9685_SetServoAngle_180 (2 , -> - -> _channel `i -> 1 `i `uc -> _angle `uc ]
+"123
+[; ;../PIC18F4620/MotorControlSystem/app.c: 123:     }
+}
+[e $U 298  ]
+"124
+[; ;../PIC18F4620/MotorControlSystem/app.c: 124:     else
+[e :U 297 ]
+"125
+[; ;../PIC18F4620/MotorControlSystem/app.c: 125:     {
+{
+"126
+[; ;../PIC18F4620/MotorControlSystem/app.c: 126:         lcd_AngleErrorScreen();
+[e ( _lcd_AngleErrorScreen ..  ]
+"127
+[; ;../PIC18F4620/MotorControlSystem/app.c: 127:     }
+}
+[e :U 298 ]
+"129
+[; ;../PIC18F4620/MotorControlSystem/app.c: 129: }
+[e :UE 296 ]
+}
+"130
+[; ;../PIC18F4620/MotorControlSystem/app.c: 130: int32_t AddString_Buffer(uint8_t* _Buffer , size_t bufferMaxSize , uint8_t* string)
+[v _AddString_Buffer `(l ~T0 @X0 1 ef3`*uc`ui`*uc ]
+"131
+[; ;../PIC18F4620/MotorControlSystem/app.c: 131: {
+{
+[e :U _AddString_Buffer ]
+"130
+[; ;../PIC18F4620/MotorControlSystem/app.c: 130: int32_t AddString_Buffer(uint8_t* _Buffer , size_t bufferMaxSize , uint8_t* string)
+[v __Buffer `*uc ~T0 @X0 1 r1 ]
+[v _bufferMaxSize `ui ~T0 @X0 1 r2 ]
+[v _string `*uc ~T0 @X0 1 r3 ]
+"131
+[; ;../PIC18F4620/MotorControlSystem/app.c: 131: {
+[f ]
+"132
+[; ;../PIC18F4620/MotorControlSystem/app.c: 132:     int32_t NumberOfChars = 0;
+[v _NumberOfChars `l ~T0 @X0 1 a ]
+[e = _NumberOfChars -> -> 0 `i `l ]
+"133
+[; ;../PIC18F4620/MotorControlSystem/app.c: 133:     uint32_t counter = 0;
+[v _counter `ul ~T0 @X0 1 a ]
+[e = _counter -> -> -> 0 `i `l `ul ]
+"134
+[; ;../PIC18F4620/MotorControlSystem/app.c: 134:     if(_Buffer && string && bufferMaxSize > 0)
+[e $ ! && && != __Buffer -> -> 0 `i `*uc != _string -> -> 0 `i `*uc > _bufferMaxSize -> -> 0 `i `ui 300  ]
+"135
+[; ;../PIC18F4620/MotorControlSystem/app.c: 135:     {
+{
+"136
+[; ;../PIC18F4620/MotorControlSystem/app.c: 136:         while(counter < bufferMaxSize-1 && string[counter] != '\0' )
+[e $U 301  ]
+[e :U 302 ]
+"137
+[; ;../PIC18F4620/MotorControlSystem/app.c: 137:         {
+{
+"138
+[; ;../PIC18F4620/MotorControlSystem/app.c: 138:              _Buffer[counter] = string[counter];
+[e = *U + __Buffer * -> _counter `ux -> -> # *U __Buffer `ui `ux *U + _string * -> _counter `ux -> -> # *U _string `ui `ux ]
+"139
+[; ;../PIC18F4620/MotorControlSystem/app.c: 139:              ++NumberOfChars;
+[e =+ _NumberOfChars -> -> 1 `i `l ]
+"140
+[; ;../PIC18F4620/MotorControlSystem/app.c: 140:              ++counter;
+[e =+ _counter -> -> -> 1 `i `l `ul ]
+"141
+[; ;../PIC18F4620/MotorControlSystem/app.c: 141:         }
+}
+[e :U 301 ]
+"136
+[; ;../PIC18F4620/MotorControlSystem/app.c: 136:         while(counter < bufferMaxSize-1 && string[counter] != '\0' )
+[e $ && < _counter -> - _bufferMaxSize -> -> 1 `i `ui `ul != -> *U + _string * -> _counter `ux -> -> # *U _string `ui `ux `ui -> 0 `ui 302  ]
+[e :U 303 ]
+"142
+[; ;../PIC18F4620/MotorControlSystem/app.c: 142:         _Buffer[counter] = '\0';
+[e = *U + __Buffer * -> _counter `ux -> -> # *U __Buffer `ui `ux -> -> 0 `ui `uc ]
+"144
+[; ;../PIC18F4620/MotorControlSystem/app.c: 144:     }
+}
+[e $U 304  ]
+"145
+[; ;../PIC18F4620/MotorControlSystem/app.c: 145:     else
+[e :U 300 ]
+"146
+[; ;../PIC18F4620/MotorControlSystem/app.c: 146:     {
+{
+"148
+[; ;../PIC18F4620/MotorControlSystem/app.c: 148:     }
+}
+[e :U 304 ]
+"149
+[; ;../PIC18F4620/MotorControlSystem/app.c: 149:     return NumberOfChars;
+[e ) _NumberOfChars ]
+[e $UE 299  ]
+"150
+[; ;../PIC18F4620/MotorControlSystem/app.c: 150: }
+[e :UE 299 ]
+}
+[a 1C 77 111 116 111 114 32 67 111 110 116 114 111 108 32 83 121 115 116 101 109 0 ]
+[a 3C 51 45 77 111 116 111 114 51 32 32 52 45 77 111 116 111 114 52 0 ]
+[a 2C 49 45 77 111 116 111 114 49 32 32 50 45 77 111 116 111 114 50 0 ]
+[a 4C 77 97 120 32 65 110 103 108 101 32 49 56 48 0 ]
+[a 5C 83 101 116 32 77 111 116 111 114 32 97 110 103 108 101 58 32 0 ]

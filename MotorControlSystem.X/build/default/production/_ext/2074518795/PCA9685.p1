@@ -1,0 +1,721 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"209 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/../../MCAL_Layer/I2C/I2C.h
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/../../MCAL_Layer/I2C/I2C.h: 209: Std_ReturnType i2c_Master_SendStart(void);
+[v _i2c_Master_SendStart `(uc ~T0 @X0 0 ef ]
+"212
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/../../MCAL_Layer/I2C/I2C.h: 212: Std_ReturnType i2c_Master_WriteByte_Blocking(uint8_t Data , uint8_t* _Ret_ACK);
+[v _i2c_Master_WriteByte_Blocking `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"211
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/../../MCAL_Layer/I2C/I2C.h: 211: Std_ReturnType i2c_Master_SendStop(void);
+[v _i2c_Master_SendStop `(uc ~T0 @X0 0 ef ]
+[v F3498 `(uc ~T0 @X0 1 tf ]
+"8 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 8: static __attribute__((inline)) uint8_t PrescalerCalculation(void);
+[v _PrescalerCalculation `TF3498 ~T0 @X0 0 s ]
+[v F1101 `(v ~T0 @X0 1 tf1`ul ]
+"12 D:/MPLAP/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v __delay `JF1101 ~T0 @X0 0 e ]
+[p i __delay ]
+"348 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\math.h: 348: float roundf(float);
+[v _roundf `(f ~T0 @X0 0 ef1`f ]
+[v F3500 `(v ~T0 @X0 1 tf3`uc`us`us ]
+"11 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 11: static void __attribute__((inline)) setOnTime_OffTime(uint8_t Channel ,uint16_t onTime , uint16_t OffTime);
+[v _setOnTime_OffTime `TF3500 ~T0 @X0 0 s ]
+"55 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/../../MCAL_Layer/I2C/../../../../../MPLAP/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8/pic/include/proc/pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"192
+[; <" PORTB equ 0F81h ;# ">
+"363
+[; <" PORTC equ 0F82h ;# ">
+"538
+[; <" PORTD equ 0F83h ;# ">
+"680
+[; <" PORTE equ 0F84h ;# ">
+"883
+[; <" LATA equ 0F89h ;# ">
+"995
+[; <" LATB equ 0F8Ah ;# ">
+"1107
+[; <" LATC equ 0F8Bh ;# ">
+"1219
+[; <" LATD equ 0F8Ch ;# ">
+"1331
+[; <" LATE equ 0F8Dh ;# ">
+"1383
+[; <" TRISA equ 0F92h ;# ">
+"1388
+[; <" DDRA equ 0F92h ;# ">
+"1605
+[; <" TRISB equ 0F93h ;# ">
+"1610
+[; <" DDRB equ 0F93h ;# ">
+"1827
+[; <" TRISC equ 0F94h ;# ">
+"1832
+[; <" DDRC equ 0F94h ;# ">
+"2049
+[; <" TRISD equ 0F95h ;# ">
+"2054
+[; <" DDRD equ 0F95h ;# ">
+"2271
+[; <" TRISE equ 0F96h ;# ">
+"2276
+[; <" DDRE equ 0F96h ;# ">
+"2435
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2500
+[; <" PIE1 equ 0F9Dh ;# ">
+"2577
+[; <" PIR1 equ 0F9Eh ;# ">
+"2654
+[; <" IPR1 equ 0F9Fh ;# ">
+"2731
+[; <" PIE2 equ 0FA0h ;# ">
+"2797
+[; <" PIR2 equ 0FA1h ;# ">
+"2863
+[; <" IPR2 equ 0FA2h ;# ">
+"2929
+[; <" EECON1 equ 0FA6h ;# ">
+"2995
+[; <" EECON2 equ 0FA7h ;# ">
+"3002
+[; <" EEDATA equ 0FA8h ;# ">
+"3009
+[; <" EEADR equ 0FA9h ;# ">
+"3016
+[; <" EEADRH equ 0FAAh ;# ">
+"3023
+[; <" RCSTA equ 0FABh ;# ">
+"3028
+[; <" RCSTA1 equ 0FABh ;# ">
+"3233
+[; <" TXSTA equ 0FACh ;# ">
+"3238
+[; <" TXSTA1 equ 0FACh ;# ">
+"3489
+[; <" TXREG equ 0FADh ;# ">
+"3494
+[; <" TXREG1 equ 0FADh ;# ">
+"3501
+[; <" RCREG equ 0FAEh ;# ">
+"3506
+[; <" RCREG1 equ 0FAEh ;# ">
+"3513
+[; <" SPBRG equ 0FAFh ;# ">
+"3518
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3525
+[; <" SPBRGH equ 0FB0h ;# ">
+"3532
+[; <" T3CON equ 0FB1h ;# ">
+"3644
+[; <" TMR3 equ 0FB2h ;# ">
+"3651
+[; <" TMR3L equ 0FB2h ;# ">
+"3658
+[; <" TMR3H equ 0FB3h ;# ">
+"3665
+[; <" CMCON equ 0FB4h ;# ">
+"3755
+[; <" CVRCON equ 0FB5h ;# ">
+"3834
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3916
+[; <" PWM1CON equ 0FB7h ;# ">
+"3986
+[; <" BAUDCON equ 0FB8h ;# ">
+"3991
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4158
+[; <" CCP2CON equ 0FBAh ;# ">
+"4237
+[; <" CCPR2 equ 0FBBh ;# ">
+"4244
+[; <" CCPR2L equ 0FBBh ;# ">
+"4251
+[; <" CCPR2H equ 0FBCh ;# ">
+"4258
+[; <" CCP1CON equ 0FBDh ;# ">
+"4355
+[; <" CCPR1 equ 0FBEh ;# ">
+"4362
+[; <" CCPR1L equ 0FBEh ;# ">
+"4369
+[; <" CCPR1H equ 0FBFh ;# ">
+"4376
+[; <" ADCON2 equ 0FC0h ;# ">
+"4447
+[; <" ADCON1 equ 0FC1h ;# ">
+"4532
+[; <" ADCON0 equ 0FC2h ;# ">
+"4651
+[; <" ADRES equ 0FC3h ;# ">
+"4658
+[; <" ADRESL equ 0FC3h ;# ">
+"4665
+[; <" ADRESH equ 0FC4h ;# ">
+"4672
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4734
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4804
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5025
+[; <" SSPADD equ 0FC8h ;# ">
+"5032
+[; <" SSPBUF equ 0FC9h ;# ">
+"5039
+[; <" T2CON equ 0FCAh ;# ">
+"5110
+[; <" PR2 equ 0FCBh ;# ">
+"5115
+[; <" MEMCON equ 0FCBh ;# ">
+"5220
+[; <" TMR2 equ 0FCCh ;# ">
+"5227
+[; <" T1CON equ 0FCDh ;# ">
+"5330
+[; <" TMR1 equ 0FCEh ;# ">
+"5337
+[; <" TMR1L equ 0FCEh ;# ">
+"5344
+[; <" TMR1H equ 0FCFh ;# ">
+"5351
+[; <" RCON equ 0FD0h ;# ">
+"5484
+[; <" WDTCON equ 0FD1h ;# ">
+"5512
+[; <" HLVDCON equ 0FD2h ;# ">
+"5517
+[; <" LVDCON equ 0FD2h ;# ">
+"5782
+[; <" OSCCON equ 0FD3h ;# ">
+"5859
+[; <" T0CON equ 0FD5h ;# ">
+"5936
+[; <" TMR0 equ 0FD6h ;# ">
+"5943
+[; <" TMR0L equ 0FD6h ;# ">
+"5950
+[; <" TMR0H equ 0FD7h ;# ">
+"5957
+[; <" STATUS equ 0FD8h ;# ">
+"6028
+[; <" FSR2 equ 0FD9h ;# ">
+"6035
+[; <" FSR2L equ 0FD9h ;# ">
+"6042
+[; <" FSR2H equ 0FDAh ;# ">
+"6049
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6056
+[; <" PREINC2 equ 0FDCh ;# ">
+"6063
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6070
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6077
+[; <" INDF2 equ 0FDFh ;# ">
+"6084
+[; <" BSR equ 0FE0h ;# ">
+"6091
+[; <" FSR1 equ 0FE1h ;# ">
+"6098
+[; <" FSR1L equ 0FE1h ;# ">
+"6105
+[; <" FSR1H equ 0FE2h ;# ">
+"6112
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6119
+[; <" PREINC1 equ 0FE4h ;# ">
+"6126
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6133
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6140
+[; <" INDF1 equ 0FE7h ;# ">
+"6147
+[; <" WREG equ 0FE8h ;# ">
+"6159
+[; <" FSR0 equ 0FE9h ;# ">
+"6166
+[; <" FSR0L equ 0FE9h ;# ">
+"6173
+[; <" FSR0H equ 0FEAh ;# ">
+"6180
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6187
+[; <" PREINC0 equ 0FECh ;# ">
+"6194
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6201
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6208
+[; <" INDF0 equ 0FEFh ;# ">
+"6215
+[; <" INTCON3 equ 0FF0h ;# ">
+"6307
+[; <" INTCON2 equ 0FF1h ;# ">
+"6377
+[; <" INTCON equ 0FF2h ;# ">
+"6494
+[; <" PROD equ 0FF3h ;# ">
+"6501
+[; <" PRODL equ 0FF3h ;# ">
+"6508
+[; <" PRODH equ 0FF4h ;# ">
+"6515
+[; <" TABLAT equ 0FF5h ;# ">
+"6524
+[; <" TBLPTR equ 0FF6h ;# ">
+"6531
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6538
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6545
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6554
+[; <" PCLAT equ 0FF9h ;# ">
+"6561
+[; <" PC equ 0FF9h ;# ">
+"6568
+[; <" PCL equ 0FF9h ;# ">
+"6575
+[; <" PCLATH equ 0FFAh ;# ">
+"6582
+[; <" PCLATU equ 0FFBh ;# ">
+"6589
+[; <" STKPTR equ 0FFCh ;# ">
+"6695
+[; <" TOS equ 0FFDh ;# ">
+"6702
+[; <" TOSL equ 0FFDh ;# ">
+"6709
+[; <" TOSH equ 0FFEh ;# ">
+"6716
+[; <" TOSU equ 0FFFh ;# ">
+"6 ../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 6: static uint16_t G_Freq = 0;
+[v _G_Freq `us ~T0 @X0 1 s ]
+[i _G_Freq
+-> -> 0 `i `us
+]
+"7
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 7: static uint8_t G_PreScaler = 0;
+[v _G_PreScaler `uc ~T0 @X0 1 s ]
+[i _G_PreScaler
+-> -> 0 `i `uc
+]
+"13
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 13: Std_ReturnType PCA9685_init(uint16_t Freq)
+[v _PCA9685_init `(uc ~T0 @X0 1 ef1`us ]
+"14
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 14: {
+{
+[e :U _PCA9685_init ]
+"13
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 13: Std_ReturnType PCA9685_init(uint16_t Freq)
+[v _Freq `us ~T0 @X0 1 r1 ]
+"14
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 14: {
+[f ]
+"15
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 15:     Std_ReturnType ret = ((Std_ReturnType)0x00);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"16
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 16:     uint8_t ACK = 1U;
+[v _ACK `uc ~T0 @X0 1 a ]
+[e = _ACK -> -> 1 `ui `uc ]
+"17
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 17:     if(Freq >= 24 && Freq <= 1526)
+[e $ ! && >= -> _Freq `ui -> -> 24 `i `ui <= -> _Freq `ui -> -> 1526 `i `ui 277  ]
+"18
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 18:     {
+{
+"19
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 19:         G_Freq = Freq;
+[e = _G_Freq _Freq ]
+"21
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 21:         ret = i2c_Master_SendStart();
+[e = _ret ( _i2c_Master_SendStart ..  ]
+"22
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 22:         ret &= i2c_Master_WriteByte_Blocking( 0x00 , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> -> 0 `i `uc &U _ACK `uc ]
+"23
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 23:         ret &= i2c_Master_WriteByte_Blocking(0x06 , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> -> 6 `i `uc &U _ACK `uc ]
+"24
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 24:         ret &= i2c_Master_SendStop();
+[e =& _ret -> ( _i2c_Master_SendStop ..  `uc ]
+"26
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 26:         G_PreScaler = PrescalerCalculation();
+[e = _G_PreScaler ( _PrescalerCalculation ..  ]
+"28
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 28:         ret &= i2c_Master_SendStart();
+[e =& _ret -> ( _i2c_Master_SendStart ..  `uc ]
+"29
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 29:         ret &= i2c_Master_WriteByte_Blocking((0x40<<1) , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> << -> 64 `i -> 1 `i `uc &U _ACK `uc ]
+"30
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 30:         ret &= i2c_Master_WriteByte_Blocking( 0x00 , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> -> 0 `i `uc &U _ACK `uc ]
+"31
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 31:         ret &= i2c_Master_WriteByte_Blocking( (1<<0x04)|(0x00<<0x06), &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> | << -> 1 `i -> 4 `i << -> 0 `i -> 6 `i `uc &U _ACK `uc ]
+"32
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 32:         ret &= i2c_Master_SendStop();
+[e =& _ret -> ( _i2c_Master_SendStop ..  `uc ]
+"33
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 33:         _delay((unsigned long)((550)*((8*((1000000UL)))/4000000.0)));
+[e ( __delay (1 -> * -> -> 550 `i `d / -> * -> -> -> 8 `i `l `ul -> 1000000 `ul `d .4000000.0 `ul ]
+"36
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 36:         ret &= i2c_Master_SendStart();
+[e =& _ret -> ( _i2c_Master_SendStart ..  `uc ]
+"37
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 37:         ret &= i2c_Master_WriteByte_Blocking((0x40<<1) , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> << -> 64 `i -> 1 `i `uc &U _ACK `uc ]
+"38
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 38:         ret &= i2c_Master_WriteByte_Blocking( 0xFE , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> -> 254 `i `uc &U _ACK `uc ]
+"39
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 39:         ret &= i2c_Master_WriteByte_Blocking( G_PreScaler , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , _G_PreScaler &U _ACK `uc ]
+"40
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 40:         ret &= i2c_Master_SendStop();
+[e =& _ret -> ( _i2c_Master_SendStop ..  `uc ]
+"42
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 42:        ret &= i2c_Master_SendStart();
+[e =& _ret -> ( _i2c_Master_SendStart ..  `uc ]
+"43
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 43:        ret &= i2c_Master_WriteByte_Blocking((0x40<<1) , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> << -> 64 `i -> 1 `i `uc &U _ACK `uc ]
+"44
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 44:        ret &= i2c_Master_WriteByte_Blocking( 0x00 , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> -> 0 `i `uc &U _ACK `uc ]
+"45
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 45:        ret &= i2c_Master_WriteByte_Blocking( ( (0x00 << 0x06 ) | (0x01 << 0x05 ) | (0x00)), &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> | | << -> 0 `i -> 6 `i << -> 1 `i -> 5 `i -> 0 `i `uc &U _ACK `uc ]
+"46
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 46:        ret &= i2c_Master_WriteByte_Blocking(( (0x00 << 0x03) | (0x01 << 0x02 ) ),&ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> | << -> 0 `i -> 3 `i << -> 1 `i -> 2 `i `uc &U _ACK `uc ]
+"47
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 47:        ret &= i2c_Master_SendStop();
+[e =& _ret -> ( _i2c_Master_SendStop ..  `uc ]
+"48
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 48:     }
+}
+[e $U 278  ]
+"49
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 49:     else
+[e :U 277 ]
+"50
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 50:     {
+{
+"52
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 52:     }
+}
+[e :U 278 ]
+"53
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 53:     return ret;
+[e ) _ret ]
+[e $UE 276  ]
+"54
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 54: }
+[e :UE 276 ]
+}
+"56
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 56: Std_ReturnType PCA9685_Set_DutyCycle(uint8_t Channel , double_t DutyCycle , uint8_t delay)
+[v _PCA9685_Set_DutyCycle `(uc ~T0 @X0 1 ef3`uc`d`uc ]
+"57
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 57: {
+{
+[e :U _PCA9685_Set_DutyCycle ]
+"56
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 56: Std_ReturnType PCA9685_Set_DutyCycle(uint8_t Channel , double_t DutyCycle , uint8_t delay)
+[v _Channel `uc ~T0 @X0 1 r1 ]
+[v _DutyCycle `d ~T0 @X0 1 r2 ]
+[v _delay `uc ~T0 @X0 1 r3 ]
+"57
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 57: {
+[f ]
+"58
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 58:     Std_ReturnType ret = ((Std_ReturnType)0x00);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"59
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 59:     uint16_t LedOn = 0;
+[v _LedOn `us ~T0 @X0 1 a ]
+[e = _LedOn -> -> 0 `i `us ]
+"60
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 60:     uint16_t LedOff = 0;
+[v _LedOff `us ~T0 @X0 1 a ]
+[e = _LedOff -> -> 0 `i `us ]
+"61
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 61:     uint16_t ledOnTime = 0;
+[v _ledOnTime `us ~T0 @X0 1 a ]
+[e = _ledOnTime -> -> 0 `i `us ]
+"62
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 62:     if(Channel>= 0 && Channel <= 15 && DutyCycle >= 0.0 && DutyCycle<= 100.0 && delay >= 0 && delay<= 100 )
+[e $ ! && && && && && >= -> _Channel `i -> 0 `i <= -> _Channel `i -> 15 `i >= _DutyCycle .0.0 <= _DutyCycle .100.0 >= -> _delay `i -> 0 `i <= -> _delay `i -> 100 `i 280  ]
+"63
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 63:     {
+{
+"64
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 64:           LedOn = (delay > 0 ) ? (uint16_t)roundf(( ( (delay*4096)/100.0 ) - 1.0 )) : 0;
+[e = _LedOn -> ? > -> _delay `i -> 0 `i : -> -> ( _roundf (1 -> - / -> * -> _delay `i -> 4096 `i `d .100.0 .1.0 `f `us `ui -> -> 0 `i `ui `us ]
+"65
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 65:           ledOnTime = (uint16_t)roundf(((DutyCycle)*4096.0)/100.0);
+[e = _ledOnTime -> ( _roundf (1 -> / * _DutyCycle .4096.0 .100.0 `f `us ]
+"67
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 67:           if(LedOn+ledOnTime > 4096)
+[e $ ! > + -> _LedOn `ui -> _ledOnTime `ui -> -> 4096 `i `ui 281  ]
+"68
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 68:           {
+{
+"69
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 69:                LedOff = (uint16_t)(LedOn+ledOnTime - 4096 );
+[e = _LedOff -> - + -> _LedOn `ui -> _ledOnTime `ui -> -> 4096 `i `ui `us ]
+"70
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 70:           }
+}
+[e $U 282  ]
+"71
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 71:           else
+[e :U 281 ]
+"72
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 72:           {
+{
+"73
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 73:                LedOff = (uint16_t)(LedOn+ledOnTime);
+[e = _LedOff -> + -> _LedOn `ui -> _ledOnTime `ui `us ]
+"74
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 74:           }
+}
+[e :U 282 ]
+"75
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 75:           setOnTime_OffTime(Channel, (LedOn & 0x0FFF), (LedOff & 0x0FFF) );
+[e ( _setOnTime_OffTime (3 , , _Channel -> & -> _LedOn `ui -> -> 4095 `i `ui `us -> & -> _LedOff `ui -> -> 4095 `i `ui `us ]
+"76
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 76:           ret = ((Std_ReturnType)0x01);
+[e = _ret -> -> 1 `i `uc ]
+"77
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 77:     }
+}
+[e $U 283  ]
+"78
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 78:     else
+[e :U 280 ]
+"79
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 79:     {
+{
+"81
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 81:     }
+}
+[e :U 283 ]
+"82
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 82:     return ret;
+[e ) _ret ]
+[e $UE 279  ]
+"83
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 83: }
+[e :UE 279 ]
+}
+"85
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 85: Std_ReturnType PCA9685_Set_OnTime_us(uint8_t Channel , uint32_t OnTime)
+[v _PCA9685_Set_OnTime_us `(uc ~T0 @X0 1 ef2`uc`ul ]
+"86
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 86: {
+{
+[e :U _PCA9685_Set_OnTime_us ]
+"85
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 85: Std_ReturnType PCA9685_Set_OnTime_us(uint8_t Channel , uint32_t OnTime)
+[v _Channel `uc ~T0 @X0 1 r1 ]
+[v _OnTime `ul ~T0 @X0 1 r2 ]
+"86
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 86: {
+[f ]
+"87
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 87:     Std_ReturnType ret = ((Std_ReturnType)0x00);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"88
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 88:     double_t DutyCycle = 0.0;
+[v _DutyCycle `d ~T0 @X0 1 a ]
+[e = _DutyCycle .0.0 ]
+"89
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 89:     double_t period_us = 0.0;
+[v _period_us `d ~T0 @X0 1 a ]
+[e = _period_us .0.0 ]
+"90
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 90:      if(Channel >= 0 && Channel <= 15)
+[e $ ! && >= -> _Channel `i -> 0 `i <= -> _Channel `i -> 15 `i 285  ]
+"91
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 91:      {
+{
+"92
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 92:          period_us = (1.0/G_Freq)*(1000000.0);
+[e = _period_us * / .1.0 -> -> _G_Freq `ui `d .1000000.0 ]
+"93
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 93:          if(OnTime > (uint32_t)period_us)
+[e $ ! > _OnTime -> _period_us `ul 286  ]
+"94
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 94:              return ret;
+[e ) _ret ]
+[e $UE 284  ]
+[e :U 286 ]
+"95
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 95:          DutyCycle = ( (double_t)OnTime/period_us )*100.0;
+[e = _DutyCycle * / -> _OnTime `d _period_us .100.0 ]
+"96
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 96:          ret = PCA9685_Set_DutyCycle(Channel,DutyCycle,0);
+[e = _ret ( _PCA9685_Set_DutyCycle (3 , , _Channel _DutyCycle -> -> 0 `i `uc ]
+"98
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 98:      }
+}
+[e $U 287  ]
+"99
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 99:      else {}
+[e :U 285 ]
+{
+}
+[e :U 287 ]
+"101
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 101:     return ret;
+[e ) _ret ]
+[e $UE 284  ]
+"102
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 102: }
+[e :UE 284 ]
+}
+"105
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 105: Std_ReturnType PCA9685_SetServoAngle_180(uint8_t Channel , uint8_t Angle)
+[v _PCA9685_SetServoAngle_180 `(uc ~T0 @X0 1 ef2`uc`uc ]
+"106
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 106: {
+{
+[e :U _PCA9685_SetServoAngle_180 ]
+"105
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 105: Std_ReturnType PCA9685_SetServoAngle_180(uint8_t Channel , uint8_t Angle)
+[v _Channel `uc ~T0 @X0 1 r1 ]
+[v _Angle `uc ~T0 @X0 1 r2 ]
+"106
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 106: {
+[f ]
+"107
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 107:     Std_ReturnType ret = ((Std_ReturnType)0x00);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"108
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 108:     double_t onTime_per_angle = 0;
+[v _onTime_per_angle `d ~T0 @X0 1 a ]
+[e = _onTime_per_angle -> -> 0 `i `d ]
+"109
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 109:     uint32_t ontime_us = 0;
+[v _ontime_us `ul ~T0 @X0 1 a ]
+[e = _ontime_us -> -> -> 0 `i `l `ul ]
+"110
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 110:     if(Channel >= 0 && Channel <= 15 && Angle >= 0 && Angle <= 180 )
+[e $ ! && && && >= -> _Channel `i -> 0 `i <= -> _Channel `i -> 15 `i >= -> _Angle `i -> 0 `i <= -> _Angle `i -> 180 `i 289  ]
+"111
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 111:     {
+{
+"112
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 112:         onTime_per_angle = ((2000UL -1000UL)/(double_t)180.0);
+[e = _onTime_per_angle / -> - -> 2000 `ul -> 1000 `ul `d .180.0 ]
+"113
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 113:         ontime_us = (uint32_t)(onTime_per_angle * Angle);
+[e = _ontime_us -> * _onTime_per_angle -> -> _Angle `i `d `ul ]
+"114
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 114:         ret = PCA9685_Set_OnTime_us(Channel,ontime_us+1000UL);
+[e = _ret ( _PCA9685_Set_OnTime_us (2 , _Channel + _ontime_us -> 1000 `ul ]
+"115
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 115:     }
+}
+[e $U 290  ]
+"116
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 116:     else { }
+[e :U 289 ]
+{
+}
+[e :U 290 ]
+"118
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 118:     return ret;
+[e ) _ret ]
+[e $UE 288  ]
+"119
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 119: }
+[e :UE 288 ]
+}
+[v F3529 `(v ~T0 @X0 1 tf3`uc`us`us ]
+"122
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 122: static void __attribute__((inline)) setOnTime_OffTime(uint8_t Channel ,uint16_t onTime , uint16_t OffTime)
+[v _setOnTime_OffTime `TF3529 ~T0 @X0 1 s ]
+"123
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 123: {
+{
+[e :U _setOnTime_OffTime ]
+"122
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 122: static void __attribute__((inline)) setOnTime_OffTime(uint8_t Channel ,uint16_t onTime , uint16_t OffTime)
+[v _Channel `uc ~T0 @X0 1 r1 ]
+[v _onTime `us ~T0 @X0 1 r2 ]
+[v _OffTime `us ~T0 @X0 1 r3 ]
+"123
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 123: {
+[f ]
+"124
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 124:         Std_ReturnType ret = ((Std_ReturnType)0x00);
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"125
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 125:         uint8_t ACK = 1U;
+[v _ACK `uc ~T0 @X0 1 a ]
+[e = _ACK -> -> 1 `ui `uc ]
+"126
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 126:         ret = i2c_Master_SendStart();
+[e = _ret ( _i2c_Master_SendStart ..  ]
+"127
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 127:         ret &= i2c_Master_WriteByte_Blocking((0x40<<1) , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> << -> 64 `i -> 1 `i `uc &U _ACK `uc ]
+"128
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 128:         ret &= i2c_Master_WriteByte_Blocking( ((Channel*0x04)+0x06) , &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> + * -> _Channel `i -> 4 `i -> 6 `i `uc &U _ACK `uc ]
+"129
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 129:         ret &= i2c_Master_WriteByte_Blocking( (uint8_t)onTime, &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> _onTime `uc &U _ACK `uc ]
+"130
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 130:         ret &= i2c_Master_WriteByte_Blocking( ((uint8_t)(onTime>>8)), &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> >> -> _onTime `ui -> 8 `i `uc &U _ACK `uc ]
+"131
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 131:         ret &= i2c_Master_WriteByte_Blocking( (uint8_t)OffTime, &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> _OffTime `uc &U _ACK `uc ]
+"132
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 132:         ret &= i2c_Master_WriteByte_Blocking( ((uint8_t)(OffTime>>8)), &ACK);
+[e =& _ret -> ( _i2c_Master_WriteByte_Blocking (2 , -> >> -> _OffTime `ui -> 8 `i `uc &U _ACK `uc ]
+"133
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 133:         ret &= i2c_Master_SendStop();
+[e =& _ret -> ( _i2c_Master_SendStop ..  `uc ]
+"134
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 134: }
+[e :UE 291 ]
+}
+[v F3536 `(uc ~T0 @X0 1 tf ]
+"138
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 138: static __attribute__((inline)) uint8_t PrescalerCalculation(void)
+[v _PrescalerCalculation `TF3536 ~T0 @X0 1 s ]
+"139
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 139: {
+{
+[e :U _PrescalerCalculation ]
+[f ]
+"140
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 140:     return ( (uint8_t)( roundf(25000000UL/(4096.0*G_Freq) - 1.0) ) );
+[e ) -> ( _roundf (1 -> - / -> -> 25000000 `ul `d * .4096.0 -> -> _G_Freq `ui `d .1.0 `f `uc ]
+[e $UE 292  ]
+"141
+[; ;../PIC18F4620/MotorControlSystem/ECU_layer/PCA9685/PCA9685.c: 141: }
+[e :UE 292 ]
+}
